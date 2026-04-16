@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://rnjqtcrto8s0"]
+
+[ext_resource type="Script" uid="uid://bo4r3qovwflde" path="res://scenes/test_world.gd" id="1_2qj6q"]
+[ext_resource type="PackedScene" uid="uid://dlp83fm3702du" path="res://die.tscn" id="1_xib1h"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4mhds"]
+albedo_color = Color(0.8087382, 0.45129186, 0.4975928, 1)
+metallic = 0.25
+
+[sub_resource type="BoxMesh" id="BoxMesh_2qj6q"]
+material = SubResource("StandardMaterial3D_4mhds")
+size = Vector3(150, 0.25, 100)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2qj6q"]
+size = Vector3(50, 0.25, 50)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_lensu"]
+bounce = 1.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4mhds"]
+size = Vector3(50, 10, 0.25)
+
+[sub_resource type="Environment" id="Environment_2qj6q"]
+ambient_light_source = 3
+ambient_light_color = Color(0.89900625, 0.8694362, 0.82728314, 1)
+reflected_light_source = 2
+
+[node name="TestWorld" type="Node3D" unique_id=506989999]
+script = ExtResource("1_2qj6q")
+
+[node name="Table" type="StaticBody3D" parent="." unique_id=417008701]
+disable_mode = 1
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Table" unique_id=1175864740]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+mesh = SubResource("BoxMesh_2qj6q")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Table" unique_id=1723078002]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0824842, 0)
+shape = SubResource("BoxShape3D_2qj6q")
+
+[node name="Wall" type="StaticBody3D" parent="." unique_id=2001822174]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, -25)
+disable_mode = 1
+physics_material_override = SubResource("PhysicsMaterial_lensu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall" unique_id=1758647569]
+shape = SubResource("BoxShape3D_4mhds")
+
+[node name="Wall2" type="StaticBody3D" parent="." unique_id=1828490762]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 25, 4, 0)
+disable_mode = 1
+physics_material_override = SubResource("PhysicsMaterial_lensu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall2" unique_id=8406785]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.742278e-08, 0, -3.821371e-15)
+shape = SubResource("BoxShape3D_4mhds")
+
+[node name="Wall3" type="StaticBody3D" parent="." unique_id=2119097415]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -25, 4, 0)
+disable_mode = 1
+physics_material_override = SubResource("PhysicsMaterial_lensu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall3" unique_id=734306607]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.742278e-08, 0, -3.821371e-15)
+shape = SubResource("BoxShape3D_4mhds")
+
+[node name="Wall4" type="StaticBody3D" parent="." unique_id=597371712]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 25)
+disable_mode = 1
+physics_material_override = SubResource("PhysicsMaterial_lensu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall4" unique_id=589744146]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -13)
+shape = SubResource("BoxShape3D_4mhds")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1984196973]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0.8660254, 0, -0.8660254, 0.5, 0, 23.813984, 13.778332)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=634855084]
+environment = SubResource("Environment_2qj6q")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1600148752]
+
+[node name="GameLabel" type="Label" parent="CanvasLayer" unique_id=835419456]
+offset_left = 21.0
+offset_right = 258.0
+offset_bottom = 23.0
+text = "Alea | The Game of Dice (TEST)"
+
+[node name="ResultLabel" type="Label" parent="CanvasLayer" unique_id=61736073]
+offset_left = 525.0
+offset_top = 295.0
+offset_right = 671.95654
+offset_bottom = 347.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Die" parent="." unique_id=1356699767 instance=ExtResource("1_xib1h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.8701973, 0)
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="roll_finished" from="Die" to="." method="_on_die_roll_finished"]
