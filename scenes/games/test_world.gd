@@ -58,7 +58,7 @@ func _process(delta):
 	if _grabbed:
 		var world_pos = _mouse_to_world(get_viewport().get_mouse_position())
 		world_pos.x = clamp(world_pos.x, -25.0, 25.0)
-		world_pos.z = clamp(world_pos.z, -25.0, 25.0)
+		world_pos.z = clamp(world_pos.z, -25.0, 13.0)
 		_throw_vel = (world_pos - _last_world_pos) / delta
 		_last_world_pos = world_pos
 		die.global_position = world_pos
