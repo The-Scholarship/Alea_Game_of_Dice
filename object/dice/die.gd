@@ -24,6 +24,7 @@ func _ready():
 # ------------------------------
 
 func grab():
+	freeze_mode = FREEZE_MODE_KINEMATIC
 	freeze = true
 	is_rolling = false
 
@@ -33,7 +34,6 @@ func throw(direction: Vector3, speed: float):
 func _roll(direction: Vector3, speed: float):
 	sleeping = false
 	freeze = false
-	transform.origin = start_pos
 	linear_velocity = Vector3.ZERO
 	angular_velocity = Vector3.ZERO
 	
