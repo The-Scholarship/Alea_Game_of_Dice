@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dlp83fm3702du"]
 
-[ext_resource type="Script" uid="uid://h2ejwte0cayw" path="res://die.gd" id="1_hjbn5"]
-[ext_resource type="PackedScene" uid="uid://dluc7tgx4x04u" path="res://imported_assets/Test_Die_01.glb" id="2_1rmeg"]
-[ext_resource type="PackedScene" uid="uid://1pip1mr1m2sp" path="res://scenes/die_raycast.tscn" id="3_1rmeg"]
+[ext_resource type="Script" uid="uid://h2ejwte0cayw" path="res://object/dice/die.gd" id="1_ofve5"]
+[ext_resource type="PackedScene" uid="uid://dluc7tgx4x04u" path="res://assets/models/Test_Die_01.glb" id="2_y7hlj"]
+[ext_resource type="PackedScene" uid="uid://1pip1mr1m2sp" path="res://object/dice/die_raycast.tscn" id="3_xtplk"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fl130"]
 size = Vector3(2, 2, 2)
@@ -10,9 +10,9 @@ size = Vector3(2, 2, 2)
 [node name="Die" type="RigidBody3D" unique_id=1356699767]
 gravity_scale = 2.0
 freeze = true
-script = ExtResource("1_hjbn5")
+script = ExtResource("1_ofve5")
 
-[node name="Test_Die_01" parent="." unique_id=166897139 instance=ExtResource("2_1rmeg")]
+[node name="Test_Die_01" parent="." unique_id=1420381465 instance=ExtResource("2_y7hlj")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=541629558]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00045597553, 0, 0)
@@ -20,30 +20,30 @@ shape = SubResource("BoxShape3D_fl130")
 
 [node name="Raycasts" type="Node3D" parent="." unique_id=1888921811]
 
-[node name="DieRaycast1" parent="Raycasts" unique_id=342857292 instance=ExtResource("3_1rmeg")]
+[node name="DieRaycast1" parent="Raycasts" unique_id=342857292 instance=ExtResource("3_xtplk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
 target_position = Vector3(0, 0, -0.1)
 
-[node name="DieRaycast2" parent="Raycasts" unique_id=1243124366 instance=ExtResource("3_1rmeg")]
+[node name="DieRaycast2" parent="Raycasts" unique_id=1243124366 instance=ExtResource("3_xtplk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 opposite_side = 5
 
-[node name="DieRaycast3" parent="Raycasts" unique_id=10216941 instance=ExtResource("3_1rmeg")]
+[node name="DieRaycast3" parent="Raycasts" unique_id=10216941 instance=ExtResource("3_xtplk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 target_position = Vector3(0.1, 0, 0)
 opposite_side = 4
 
-[node name="DieRaycast4" parent="Raycasts" unique_id=1557044563 instance=ExtResource("3_1rmeg")]
+[node name="DieRaycast4" parent="Raycasts" unique_id=1557044563 instance=ExtResource("3_xtplk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
 target_position = Vector3(-0.1, 0, 0)
 opposite_side = 3
 
-[node name="DieRaycast5" parent="Raycasts" unique_id=1792255343 instance=ExtResource("3_1rmeg")]
+[node name="DieRaycast5" parent="Raycasts" unique_id=1792255343 instance=ExtResource("3_xtplk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 target_position = Vector3(0, 0.1, 0)
 opposite_side = 2
 
-[node name="DieRaycast6" parent="Raycasts" unique_id=1564592812 instance=ExtResource("3_1rmeg")]
+[node name="DieRaycast6" parent="Raycasts" unique_id=1564592812 instance=ExtResource("3_xtplk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
 target_position = Vector3(0, 0, 0.1)
 opposite_side = 1

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://rnjqtcrto8s0"]
 
-[ext_resource type="Script" uid="uid://bo4r3qovwflde" path="res://scenes/test_world.gd" id="1_2qj6q"]
-[ext_resource type="PackedScene" uid="uid://dlp83fm3702du" path="res://die.tscn" id="1_xib1h"]
+[ext_resource type="Script" uid="uid://bo4r3qovwflde" path="res://scenes/games/test_world.gd" id="1_hepnl"]
+[ext_resource type="PackedScene" uid="uid://dlp83fm3702du" path="res://object/dice/die1.tscn" id="2_ncqnb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4mhds"]
 albedo_color = Color(0.8087382, 0.45129186, 0.4975928, 1)
@@ -26,7 +26,7 @@ ambient_light_color = Color(0.89900625, 0.8694362, 0.82728314, 1)
 reflected_light_source = 2
 
 [node name="TestWorld" type="Node3D" unique_id=506989999]
-script = ExtResource("1_2qj6q")
+script = ExtResource("1_hepnl")
 
 [node name="Table" type="StaticBody3D" parent="." unique_id=417008701]
 disable_mode = 1
@@ -96,7 +96,7 @@ offset_bottom = 347.0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Die" parent="." unique_id=1356699767 instance=ExtResource("1_xib1h")]
+[node name="Die" parent="." unique_id=1356699767 instance=ExtResource("2_ncqnb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.8701973, 0)
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
