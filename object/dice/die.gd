@@ -32,6 +32,10 @@ func throw(direction: Vector3, speed: float):
 	_roll(direction, speed)
 
 func _roll(direction: Vector3, speed: float):
+	
+	if direction == Vector3.ZERO:
+		direction = Vector3(randf_range(-1, 1), 0, randf_range(-1, 1)).normalized()
+
 	sleeping = false
 	freeze = false
 	linear_velocity = Vector3.ZERO
