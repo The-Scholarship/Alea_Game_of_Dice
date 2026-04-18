@@ -4,6 +4,9 @@
 
 This is a historically inspired physics-based dice game. The historical knowledge is based on the book "Libro de los Juegos" (Book of Games) by Alfonso X, which was written in the 13th century. The game will feature various dice games that were popular during that time period, and players will be able to experience the thrill of betting and rolling dice in a medieval setting.
 
+## Dice controls
+To roll the dice, you can click and drag the dice to throw them! 
+
 ## Why are we making this game? 
 
 The main motivation behind this game is to explore Godot engine and to learn how to create a 3D game from scratch. 
