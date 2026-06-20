@@ -32,7 +32,7 @@ script = ExtResource("1_hepnl")
 disable_mode = 1
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Table" unique_id=1175864740]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23431969, -0.8287735, 0.15904617)
 mesh = SubResource("BoxMesh_2qj6q")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Table" unique_id=1723078002]
@@ -75,7 +75,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -13)
 shape = SubResource("BoxShape3D_4mhds")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1984196973]
-transform = Transform3D(1, 0, 0, 0, 0.5, 0.8660254, 0, -0.8660254, 0.5, 0, 23.813984, 13.778332)
+transform = Transform3D(1, 0, 0, 0, 0.49999997, 0.86602545, 0, -0.86602545, 0.49999997, 0, 20.043823, 13.778332)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=634855084]
 environment = SubResource("Environment_2qj6q")

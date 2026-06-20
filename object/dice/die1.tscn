@@ -10,6 +10,7 @@ size = Vector3(2, 2, 2)
 [node name="Die" type="RigidBody3D" unique_id=1356699767]
 gravity_scale = 2.0
 freeze = true
+continuous_cd = true
 script = ExtResource("1_ofve5")
 
 [node name="Test_Die_01" parent="." unique_id=1420381465 instance=ExtResource("2_y7hlj")]
